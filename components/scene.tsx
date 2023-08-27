@@ -26,7 +26,7 @@ export default function Scene({ words, setWords }: SceneProps) {
       }}
     >
       <fog attach="fog" color={"black"} near={0} far={80} />
-      <OrbitControls enableZoom enablePan enableRotate />
+      {/* <OrbitControls enableZoom enablePan enableRotate /> */}
       <ambientLight intensity={0.2} />
       <pointLight position={[15, 0, -10]} intensity={200} color={0x00ff00} />
       <pointLight position={[-15, 0, -10]} intensity={200} color={0xff0000} />

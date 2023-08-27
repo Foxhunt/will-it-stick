@@ -25,6 +25,7 @@ export default function Input({ words, setWords }: InputProps) {
       }}
     >
       <input
+        autoFocus
         value={value}
         onChange={(event) => setValue(event.target.value)}
         type="text"
