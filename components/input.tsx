@@ -6,11 +6,10 @@ import { useState } from "react";
 import { WordProps } from "./word";
 
 interface InputProps {
-  words: WordProps[];
   setWords: Dispatch<SetStateAction<WordProps[]>>;
 }
 
-export default function Input({ words, setWords }: InputProps) {
+export default function Input({ setWords }: InputProps) {
   const [value, setValue] = useState("sh*t!");
 
   return (
@@ -20,7 +19,7 @@ export default function Input({ words, setWords }: InputProps) {
         event.preventDefault();
 
         if (value !== "") {
-          setWords([...words, { word: value, id: Math.random() }]);
+          setWords((words) => [...words, { word: value, id: Math.random() }]);
         }
       }}
     >

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-[100svh] grid grid-rows-[1fr_30px]">
       <Scene words={words} setWords={setWords} />
-      <Input words={words} setWords={setWords} />
+      <Input setWords={setWords} />
     </div>
   );
 }
