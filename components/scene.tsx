@@ -24,6 +24,7 @@ export default function Scene({ words, setWords }: SceneProps) {
       camera={{
         far: 4000,
       }}
+      frameloop="demand"
     >
       <fog attach="fog" color={"black"} near={0} far={80} />
       {/* <OrbitControls enableZoom enablePan enableRotate /> */}
