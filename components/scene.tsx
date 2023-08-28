@@ -2,14 +2,14 @@
 
 import type { Dispatch, SetStateAction } from "react";
 
-import { OrbitControls } from "@react-three/drei";
+import { Center, OrbitControls, Text3D } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import {
   Bloom,
   DepthOfField,
   EffectComposer,
 } from "@react-three/postprocessing";
-import { CuboidCollider, Physics } from "@react-three/rapier";
+import { CuboidCollider, Physics, RigidBody } from "@react-three/rapier";
 
 import Word, { WordProps } from "./word";
 
@@ -31,6 +31,24 @@ export default function Scene({ words, setWords }: SceneProps) {
       <pointLight position={[15, 0, -10]} intensity={200} color={0x00ff00} />
       <pointLight position={[-15, 0, -10]} intensity={200} color={0xff0000} />
       <Physics colliders="cuboid">
+        <RigidBody type="fixed" colliders={"hull"}>
+          <Center position={[0, 5, -25]} rotation={[0.2, 0, 0]} scale={2}>
+            <Text3D
+              font="Roboto_Regular.json"
+              bevelEnabled
+              bevelThickness={0.2}
+              bevelSize={0.05}
+              bevelOffset={0}
+              bevelSegments={4}
+            >
+              Will it stick?!
+              <meshStandardMaterial
+                emissive={"white"}
+                emissiveIntensity={0.2}
+              />
+            </Text3D>
+          </Center>
+        </RigidBody>
         {words.map(({ word, id }) => (
           <Word key={id} word={word} id={id} />
         ))}
