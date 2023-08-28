@@ -65,10 +65,16 @@ export default function Scene({ words, setWords }: SceneProps) {
           args={[100, 100, 1]}
           sensor
           onIntersectionEnter={(event) => {
-            const value = 10;
+            // Check link for chances graph
+            // https://www.desmos.com/calculator/gk2p69hzlv
+            // Max damping of 16 feels good
+            const damping = 1.8 ** (Math.random() * 8.64) * 0.1;
+            // const damping = 16;
 
-            event.other.rigidBody?.setLinearDamping(Math.random() * value);
-            event.other.rigidBody?.setAngularDamping(Math.random() * value);
+            event.other.rigidBody?.setLinearDamping(damping);
+            event.other.rigidBody?.setAngularDamping(damping);
+
+            window.navigator.vibrate((400 / 16) * damping);
           }}
         />
         {/* floor */}
