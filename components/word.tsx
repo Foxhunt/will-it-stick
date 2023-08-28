@@ -21,13 +21,14 @@ export default function Word({ word, id }: WordProps) {
 
       rigidBody.current?.setLinvel({ x: lX, y: lY, z: -lValue * 2 }, true);
 
-      const aValue = 0.8;
+      const aValue = 0.4;
 
       const aX = Math.random() * aValue * 2 - aValue;
       const aY = Math.random() * aValue * 2 - aValue;
+      const aZ = Math.random() * aValue * 2 - aValue;
 
-      rigidBody.current?.setAngvel({ x: aX, y: aY, z: 0 }, true);
-    }, 10);
+      rigidBody.current?.setAngvel({ x: aX, y: aY, z: aZ }, true);
+    }, 0);
   }, []);
 
   return (
