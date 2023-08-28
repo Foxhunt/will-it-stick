@@ -52,12 +52,12 @@ export default function Scene({ words, setWords }: SceneProps) {
           args={[1000, 1, 1000]}
           sensor
           onIntersectionEnter={(event) => {
-            setWords([
-              ...words.filter(
+            setWords((words) =>
+              words.filter(
                 // @ts-ignore
                 ({ id }) => id !== event.other.rigidBody?.userData.id,
               ),
-            ]);
+            );
           }}
         />
       </Physics>
