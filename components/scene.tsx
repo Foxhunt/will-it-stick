@@ -30,6 +30,7 @@ export default function Scene({ words, setWords }: SceneProps) {
       <ambientLight intensity={0.2} />
       <pointLight position={[15, 0, -10]} intensity={200} color={0x00ff00} />
       <pointLight position={[-15, 0, -10]} intensity={200} color={0xff0000} />
+      <pointLight position={[0, 15, -7]} intensity={200} color={0x0000ff} />
       <Physics colliders="cuboid">
         <RigidBody type="fixed" colliders={"hull"}>
           <Center position={[0, 5, -25]} rotation={[0.2, 0, 0]} scale={2}>
