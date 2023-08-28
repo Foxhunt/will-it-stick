@@ -14,7 +14,7 @@ export default function Input({ setWords }: InputProps) {
 
   return (
     <form
-      className="flex"
+      className="flex p-3"
       onSubmit={async (event) => {
         event.preventDefault();
 
@@ -28,10 +28,10 @@ export default function Input({ setWords }: InputProps) {
         value={value}
         onChange={(event) => setValue(event.target.value)}
         type="text"
-        className="flex-1 text-black rounded-md px-2 focus:outline-none "
+        className="flex-1 text-black rounded-md px-4 focus:outline-none "
       />
-      <button type="submit" className="w-1/6">
-        Yeet
+      <button type="submit" className="w-1/3">
+        Throw
       </button>
     </form>
   );

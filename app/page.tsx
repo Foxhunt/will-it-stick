@@ -10,7 +10,7 @@ export default function Home() {
   const [words, setWords] = useState<WordProps[]>([]);
 
   return (
-    <div className="min-h-[100svh] grid grid-rows-[1fr_30px]">
+    <div className="min-h-[100svh] grid grid-rows-[1fr_60px]">
       <Scene words={words} setWords={setWords} />
       <Input setWords={setWords} />
     </div>
